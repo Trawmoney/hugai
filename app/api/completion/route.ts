@@ -12,7 +12,7 @@ export async function POST(req: Request) {
   const { prompt } = await req.json();
 
   const response = Hf.textGenerationStream({
-    model: 'OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5',
+    model: 'HuggingFaceH4/zephyr-7b-beta',
     inputs: `<|prompter|>${prompt}<|endoftext|><|assistant|>`,
     parameters: {
       max_new_tokens: 200,
